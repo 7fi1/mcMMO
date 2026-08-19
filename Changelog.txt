@@ -19,6 +19,7 @@ Version 2.3.001
     Removed the unused firework and Flux entries under 'Particles' in config.yml (See notes)
     Removed the inert Tree Feller Rank_2 through Rank_5 entries and the unused Fishing Mastery block from skillranks.yml (See notes)
     Removed the unused DEFLECT_ARROWS, ABILITY_ACTIVATED_BERSERK, and TIRED entries from sounds.yml
+    Updated Simplified Chinese (zh_CN) locale with translations for the new /xprate, level-up sound, and Scrap Collector messages, plus revised existing entries (Thanks TAHAamaBOT)
     Removed the unused 'Fishing.Exhausting' locale entry
     (API) Deprecated the unused Blast Mining getDebrisReduction, getDropMultiplier, and getBlastMiningRankLevel methods in AdvancedConfig and MiningManager
     (Codebase) Removed the AdvancedConfig getSerratedStrikesTicks and getRuptureExplosionDamage methods along with their settings
