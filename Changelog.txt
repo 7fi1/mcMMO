@@ -14,7 +14,7 @@ Version 2.3.001
     Fixed the ExperienceAPI methods setXPOffline, setLevelOffline, and removeXPOffline never saving their changes
     Fixed leftover banked XP being lost when a plugin cancelled a level up event
     Fixed rare errors and stale text in messages fetched while /mcreloadlocale was running
-    Added 'Experience_Formula.Player_Tamed.Multiplier' to experience.yml (See notes)
+    Added the missing 'Experience_Formula.Player_Tamed.Multiplier' entry to the default experience.yml (See notes)
     Added Woodcutting XP values for Poplar_Log, Stripped_Poplar_Log, Poplar_Wood, and Stripped_Poplar_Wood to experience.yml
     Added Herbalism XP values for Red_Shrub and Shelf_Mushroom to experience.yml
     Added Bonus_Drops.Woodcutting.Poplar_Log and Bonus_Drops.Woodcutting.Poplar_Wood to config.yml
@@ -42,7 +42,7 @@ Version 2.3.001
     Endermen marked by the 'ExploitFix.EndermanEndermiteFarms' countermeasure are meant to give no combat XP, this protection works again. Servers that want enderman and endermite farms to give XP can turn the setting off in experience.yml.
     Graceful Roll now negates up to 14 damage as set by 'Skills.Acrobatics.GracefulRoll.DamageThreshold' in advanced.yml, it previously used the normal Roll threshold of 7.
     The default repair.vanilla.yml labeled the material field 'ItemMaterialCategory' while mcMMO was looking for 'MaterialType' instead, so the value was ignored and guessed from the item instead. mcMMO now reads 'ItemMaterialCategory' and falls back to 'MaterialType' if it isn't there, if neither is set the type is still guessed from the item like before. Custom repair and salvage configs do not need updating. The material type only decides which per-material repair or salvage permission applies, and the guess was only wrong for SHIELD (now WOOD) and WARPED_FUNGUS_ON_A_STICK (now STRING).
-    Combat XP from mobs tamed by a player is multiplied by 'Experience_Formula.Player_Tamed.Multiplier'. It defaults to 0.0, which matches the old behavior of tamed mobs giving no XP.
+    The Player_Tamed multiplier has existed since 2.1.148 but was never written to the default experience.yml, so nobody could see it. Combat XP from mobs tamed by a player is multiplied by this value, it defaults to 0.0 which is what mcMMO has been using all along, so tamed mobs still give no XP unless you change it.
     The settings removed from config.yml, advanced.yml, hidden.yml, skillranks.yml, and sounds.yml had no effect, gameplay is unchanged. Existing config files do not need updating, leftover entries are ignored. Blast Mining bonus drops and debris have not used the removed settings for a long time, and Tree Feller has a single rank, the extra rank entries did nothing. The removed Particles entries are Ability_Activation, Ability_Deactivation, LargeFireworks, Flux, LevelUp_Enabled, and LevelUp_Tier, none of which triggered anything, the working particle toggles are untouched.
 
 Version 2.3.000
